@@ -247,6 +247,7 @@ run() {
 run_build_script() {
   local cmd="$@"
   echo "$ $cmd"
+  _chroot_as_normal "export -f travis_wait"
   _chroot_as_normal "$cmd"
   local ret=$?
 
